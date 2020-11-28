@@ -11,9 +11,10 @@ import {HeaderComponent} from './components/shared/header/header.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     HeaderComponent,
     AppComponent,
       HomeComponent
@@ -24,7 +25,9 @@ import { HomeComponent } from './home/home.component';
     MatIconModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
