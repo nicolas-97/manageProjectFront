@@ -21,8 +21,6 @@ import {HttpClientModule} from '@angular/common/http';
       HomeComponent
    ],
   imports: [
-    MatButtonModule,
-    MatToolbarModule,
     MatIconModule,
     BrowserModule,
     AppRoutingModule,

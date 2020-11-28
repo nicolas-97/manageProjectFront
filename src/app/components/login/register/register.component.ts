@@ -1,3 +1,4 @@
+import {HttpResponse} from '@angular/common/http';
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
@@ -16,12 +17,16 @@ export class RegisterComponent  {
     this.signUpForm = this._builder.group({
       name: ['',Validators.required],
       email: ['', Validators.compose([Validators.email, Validators.required])],
-      password: ['', Validators.compose([Validators.minLength(8),Validators.required])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
     });
   }
 
   signUp(values){
-    console.log(values);
+    this._authService.register(values).subscribe((res) =>{
+      if(res.message!=null){
+        this.goBack();
+      }
+    })
   }
 
   goBack(){
