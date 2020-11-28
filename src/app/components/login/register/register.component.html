@@ -1,3 +1,28 @@
-<p>
-  register works!
-</p>
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="card">
+      <div class="card-body">
+        <div class="col-12">
+          <form [formGroup]="signUpForm" (ngSubmit)="signUp(signUpForm.value)">
+            <div class="form-group">
+              <label for="">Nombre</label>
+              <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="nombre" formControlName="name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Correo Electronico</label>
+              <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email" formControlName="email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
+            </div>
+            <button type="submit" class="btn btn-primary mt-2" [disabled]="signUpForm.invalid">Crear cuenta</button>
+          </form>
+          <div class="col-12 mt-3">
+            <a type="button" class="btn btn-link" (click)="goBack()">¿Ya tienes una cuenta?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
