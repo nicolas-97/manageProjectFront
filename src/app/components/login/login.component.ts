@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from 'src/app/service/auth.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -20,8 +21,11 @@ export class LoginComponent {
   }
 
   login(values){
-    this._authService.login(values).subscribe(res =>{
-
+    this._authService.login(values).pipe(first()).subscribe(res =>{
+      console.log(res)
+      if(res.access_token!=null){
+        localStorage.setItem('token',res)
+      }
     })
   }
 
