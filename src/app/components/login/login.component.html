@@ -16,7 +16,7 @@
               <input type="checkbox" class="form-check-input" formControlName="remember_me">
               <label class="form-check-label" for="exampleCheck1">Recordarme</label>
             </div>
-            <button type="submit" class="btn btn-primary mt-2">Iniciar sesion</button>
+            <button type="submit" class="btn btn-primary mt-2" [disabled]="loginForm.invalid">Iniciar sesion</button>
           </form>
           <div class="col-12 mt-3">
             <button type="button" class="btn btn-link">¿Aun no estas registrado?</button>
