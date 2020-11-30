@@ -16,6 +16,13 @@
               <label for="exampleInputPassword1">Contraseña</label>
               <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
             </div>
+            <div class="form-group">
+              <label >Compañia</label>
+              <select class="custom-select" id="inputGroupSelect01" formControlName="company_id">
+                <option selected>Selecciona...</option>
+                <option *ngFor="let company of companies"value="{{company.id}}">{{company.name}}</option>
+              </select>
+            </div>
             <button type="submit" class="btn btn-primary mt-2" [disabled]="signUpForm.invalid">Crear cuenta</button>
           </form>
           <div class="col-12 mt-3">
