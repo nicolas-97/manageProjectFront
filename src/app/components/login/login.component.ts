@@ -22,7 +22,7 @@ export class LoginComponent {
 
   async login(values){
     await this._authService.login(values).pipe(first()).subscribe(res =>{
-
+      // navegar
     })
   }
 
