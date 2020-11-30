@@ -20,12 +20,9 @@ export class LoginComponent {
     });
   }
 
-  login(values){
-    this._authService.login(values).pipe(first()).subscribe(res =>{
-      console.log(res)
-      if(res.access_token!=null){
-        localStorage.setItem('token',res)
-      }
+  async login(values){
+    await this._authService.login(values).pipe(first()).subscribe(res =>{
+
     })
   }
 

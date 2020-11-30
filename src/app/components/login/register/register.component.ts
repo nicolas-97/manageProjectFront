@@ -22,7 +22,7 @@ export class RegisterComponent  {
   }
 
   signUp(values){
-    this._authService.register(values).subscribe((res) =>{
+    this._authService.register(values).subscribe((res:any) =>{
       if(res.message!=null){
         this.goBack();
       }
