@@ -10,6 +10,6 @@ import {HeaderComponent} from '../shared/header/header.component';
     CommonModule,
     CompanyRoutingModule
   ],
-  declarations: [CompanyComponent, HeaderComponent]
+  declarations: [CompanyComponent,HeaderComponent]
 })
 export class CompanyModule { }
