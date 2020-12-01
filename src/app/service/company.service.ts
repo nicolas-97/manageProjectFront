@@ -14,4 +14,8 @@ export class CompanyService {
   allCompanies(): Observable<any>{
     return this.http.get(this.url);
   }
+
+  getCompany(id: number): Observable<any>{
+    return this.http.get(this.url+'/'+id);
+  }
 }

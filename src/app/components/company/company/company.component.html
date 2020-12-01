@@ -1,0 +1,31 @@
+<div class="row" *ngIf="company.company">
+  <div class="col-6">
+    Nombre: <strong>{{company.company.name}}</strong>
+  </div>
+  <div class="col-6">
+    Email: <strong>{{company.company.email}}</strong>
+  </div>
+  <div class="col-6">
+    Nit: <strong>{{company.company.nit}}</strong>
+  </div>
+  <div class="col-6">
+    Phone: <strong>{{company.company.phone}}</strong>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-8 card">
+    <div class="row">
+      <div class="col-4 card" *ngFor="let projects of company.projects">
+        <div class="card-body">
+          <h5 class="card-title">{{projects.name}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Cronograma</h6>
+          <p class="card-text">Fecha de inicio : {{projects.start | date:'yyyy-MM-dd' }}</p>
+          <p class="card-text">Fecha de inicio : {{projects.finish | date:'yyyy-MM-dd' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4 card">sahdjksadh</div>
+</div>
