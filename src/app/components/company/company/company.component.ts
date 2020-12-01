@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {ICompany} from 'src/app/models/company';
 import {CompanyService} from 'src/app/service/company.service';
 
 @Component({
@@ -9,7 +10,7 @@ import {CompanyService} from 'src/app/service/company.service';
 })
 export class CompanyComponent implements OnInit {
 
-  company=[];
+  company:ICompany;
   idCompany: any;
   constructor(private _companyService:CompanyService, private _paramas: ActivatedRoute) { }
 
@@ -19,9 +20,8 @@ export class CompanyComponent implements OnInit {
   }
 
   getInfoCompany(){
-    this._companyService.getCompany(this.idCompany).subscribe(res=>{
+    this._companyService.getCompany(this.idCompany).subscribe((res : ICompany)=>{
       this.company=res;
-      console.log()
     })
   }
 
