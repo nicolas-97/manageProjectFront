@@ -17,9 +17,8 @@ import {AuthServicesService} from './Interceptors/auth-services.service';
 
 @NgModule({
   declarations: [
-    HeaderComponent,
     AppComponent,
-      HomeComponent
+    HomeComponent
    ],
   imports: [
     MatIconModule,
